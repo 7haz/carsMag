@@ -1,0 +1,17 @@
+<% include ../partials/header %>
+
+    <div class="container">
+        
+        <form method="post" action="/cars/<%= carId %>/comments/<%= comment._id %>?_method=PUT">
+            <div style="width:50%; margin:0 auto ;">
+                <h3>Update Comment </h3>
+              <div class="form-group">
+                <textarea class="form-control" name="text" rows="5"><%= comment.text %></textarea>
+              </div>
+              <button class="btn btn-success"> Updtade </button>
+        </form>
+          <br><a href="/cars/<%= carId %>">Go back</a>
+        </div>
+    </div>
+
+<% include ../partials/footer %>

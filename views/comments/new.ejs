@@ -1,0 +1,15 @@
+<% include ../partials/header %>
+
+    <div class="container">
+        <form method="post" action="/cars/<%= car._id %>/comments">
+            <div style="width:30%; margin:0 auto ;">
+              <div class="form-group">
+                <textarea class="form-control" name="text" placeholder=" Your comment .." rows="4"></textarea>
+              </div>
+              <button class="btn btn-success"> Submit </button>
+        </form>
+          <br><a href="/cars/<%= car._id %>">Go back</a>
+        </div>
+    </div>
+
+<% include ../partials/footer %>

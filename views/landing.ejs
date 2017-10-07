@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>CarsMagazine</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+      <link rel="stylesheet" href="/stylesheets/landing.css">
+   </head>
+   <body>
+   
+    <!--alert flash massages-->
+   <div>   
+      <% if(error && error.length >0){ %>
+         <div class="container">
+            <div class="alert alert-danger" role="alert">
+               <%= error %>
+            </div>
+         </div>
+      <% } %>
+      
+      <% if(success && success.length >0){ %>
+         <div class="container">
+            <div class="alert alert-success" role="alert">
+               <%= success %>
+            </div>
+         </div>
+      <% } %>
+      
+      
+      <% if(info && info.length >0){ %>
+         <div class="container">
+            <div class="alert alert-info" role="alert">
+               <%= info %>
+            </div>
+         </div>
+      <% } %>
+      
+   </div>   
+
+      
+      <div id="landingHeader">
+         <h1>Welcome to CarsMagazine!</h1>
+         <a class="btn btn-success btn-lg" href="/cars">View all cars</a>
+      </div>
+      
+      
+      <ul class="slideshow">
+         <li></li>
+         <li></li>
+         <li></li>
+         <li></li>
+         <li></li>
+      </ul>
+      
+      
+      
+   </body>
+</html>

@@ -1,0 +1,58 @@
+<% include ../partials/header %>
+
+
+  
+<div class="container">
+    <div class="jumbotron" style="padding-bottom: 30px;
+                                  padding-top : 30 ;">
+       <h3 style="margin-top : 0 ;"> Main article page</h3>
+       <p> Most epic cars articles and comunity !</p>
+       <a class="btn btn-success btn-lg" href="/cars/new">Add a new car article</a>
+       <form action="/cars" method="GET" class="form-inline" style="margin-top:20px;">
+           <div class="form-group">
+               <input type="text" name="search" placeholder=" Article search ..." class="form-control" style="width:270px;">
+               <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+           </div>
+       </form>
+    </div>
+ 
+  
+  <div class="row" style="display:flex;flex-wrap:wrap;">
+      
+     <% if(resultsMessage){ %>
+         <div class="container">
+            <div class="alert alert-danger" role="alert">
+              <%= resultsMessage %>
+            </div>
+         </div>
+     <% }else{ %>
+         <% cars.forEach(function(car){ %>
+           <div class="col-md-4 col-sm-6 col-lg-3">
+               <div class="thumbnail">
+                 <img src="<%= car.img %>" width="230" height="220">
+                 <div class="caption" style="">
+                     <div class="text-right" style="float:right;">
+                         <span class="glyphicon glyphicon-heart"></span><h4 style="float:right;"><%= car.likes.length %></h4>
+                     </div>
+                    
+                     <h4><%= car.name %> </h4>
+                     
+                     <a href="cars/<%= car._id %>" class="btn btn-primary">More Info</a>
+                      <div class="text-right" style="float:right;">
+                         <h5><%= car.created.toDateString() %></h5>
+                     </div>
+                     
+                 </div>
+               </div>
+            </div>
+         <% }); %>
+     <% } %>
+     
+  </div>
+
+
+</div>
+
+
+
+<% include ../partials/footer %>
